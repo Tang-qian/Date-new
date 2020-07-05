@@ -1,0 +1,1291 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+	<meta charset="utf-8">
+	<title>国货正当潮</title>
+		<link href="css/index-style.css" rel="stylesheet" />
+		<link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+		<link type="text/css" href="css/music-style.css" rel="stylesheet" />
+		<script src="js/echarts.4.7.js"></script>
+		<script src="https://oisanjavax.github.io/echarts-wordcloud/dist/echarts-wordcloud.min.js"></script>
+	</head>
+
+	
+	<body>
+      	<!-- header -->
+		  <header id="top-header"> 	
+			 <img src="images/标题2.png" alt="标题"> 
+			 <p class="text1"> 伴随着中国经济的崛起，“中国制造”已成为一张亮丽的名片。在全球诸多领域，中国文化、设计，甚至是品牌所掀起的国潮风暴，都占据着潮头浪尖，引领着时尚。关于国货崛起的提法，并非空穴来风，而是有着严格的数据支撑。
+			  </p>
+			  
+			 	<div class="btns-bg">
+					<div class="PlayEy"></div>
+					<div class="Btn"></div>
+					<div class="Play">
+						<audio id="audios" src="music/绘师岸田.mp3"></audio>
+					</div>
+				</div>
+			   <script src="js/script-music.js"></script>
+			  
+			 <nav class="navbar">
+			  <!--菜单导航-->
+			  <ul>
+				<li><a href="#page1"><img src="images/navbar.png" alt="导航"> </a></li>
+				<li><a href="#page2"><img src="images/navbar.png" alt="导航"></a></li>
+				<li><a href="#page3"><img src="images/navbar.png" alt="导航"></a></li>
+				<li><a href="#page4"><img src="images/navbar.png" alt="导航"></a></li> 
+			  </ul>
+			</nav>
+
+      	 </header>
+		<!--============== 一、开始================-->
+		
+		<div id="page1">
+			<div class="block">
+				<h2>一、政策引领品牌与品质并举</h2>
+				<div class="chart1-1">
+					<img src="images/spwgj.jpg"  alt="双品网购节"/>
+				</div>
+				<div class="text1">
+					2020 年4月，商务部、工信部、国家邮政局、中国消费者协会联合组织第二届“双品网购节”，携手一百余家平台和企业，发挥电商促消费的“先锋队”作用。持续倡导品牌消费、品质消费， “数字赋能、绿色发展、国货创新、扶贫助农、助力实体”为五大引领方向。
+					<br>“双品网购节”是商务部于2019年发起的一项促消费专项系列活动，以“品牌消费、品质消费”为主题全面促进品牌消费与品质消费。2019年首届“双品网购节”参与品牌超过10万个，商品总体好评率超过97% ，销售额达770亿元人民币。
+				</div>
+			</div>
+		</div>
+		
+			<!--============== 二、开始================-->
+		
+			<div id="page2">
+				<div class="block">
+					<h2>二、平台助推中国产业加速迈向全面品牌化发展阶段</h2>
+					<div id="chart1-2" class="chart"></div>
+					<div class="text1">2010年的WTO +外需 2006年的互联网+内需，出口转内销，互联网品牌化国内消费互联网发展阶段。 2015年的DT+全球化，中国品牌出海
+						全球消费互联网发展阶段。 2019年的数字基础设施，加速第一二产业数字化品牌化全球消费产业互联网发展阶段。<br>
+						
+					</div>
+					<!--=========================1-2 2001年至2019年中国产业发展图=========================-->
+					<script>
+						var myChart = echarts.init(document.getElementById('chart1-2'));
+						var option = {	
+						
+						tooltip : {
+							trigger: 'axis'
+						},
+						legend: {
+							data:['外贸出口','社零总额','网络零售']
+						},
+						toolbox: {
+							feature: {
+								saveAsImage: {}
+							}
+						},
+						grid: {
+							left: '4%',
+							right: '6%',
+							bottom: '3%',
+							containLabel: true
+						},
+						xAxis : [
+							{
+								type : 'category',
+								boundaryGap : false,
+								data : ['2001年中国加入WTO','2008年全球金融危机','2015年“一带一路”','2019年新冠疫情']
+							}
+						],
+						yAxis : [
+							{
+								type: 'value',
+								name: '单位：万亿元人民币',
+								min: 0,
+								max: 70,
+								interval: 10,
+								axisLabel: {
+								formatter: '{value} '
+								},
+
+
+							}
+						],
+						series : [
+							{
+								name:'外贸出口',
+								type:'line',
+								stack: '总量',
+								areaStyle: {normal: {}},
+								data:[2.2,10.0,14.1,17.2]
+							},
+							{
+								name:'社零总额',
+								type:'line',
+								stack: '总量',
+								areaStyle: {normal: {}},
+								data:[4.3,11.5,30.1,41.2]
+							},
+							{
+								name:'网络零售',
+								type:'line',
+								stack: '总量',
+								areaStyle: {normal: {}},
+								data:[0,0.13,3.9,10.5]
+							},
+						
+						]
+					};
+						myChart.setOption(option);
+					</script>
+				</div>
+				
+			
+		<div class="block">
+			<h2>中国品牌新印象</h2>
+			<div id="chart1-3" class="chart"></div>
+			<!--===============1-3中国品牌新印象图================-->
+			<script>
+				var chart = echarts.init(document.getElementById('chart1-3'));
+				var option = {
+				
+					tooltip: {},
+					series: [{
+						type: 'wordCloud',
+						gridSize: 20,
+						sizeRange: [12, 50],
+						rotationRange: [0, 0],
+						shape: 'circle',
+						textStyle: {
+							normal: {
+								color: function() {
+									return 'rgb(' + [
+										Math.round(Math.random() * 160),
+										Math.round(Math.random() * 160),
+										Math.round(Math.random() * 160)
+									].join(',') + ')';
+								}
+							},
+							emphasis: {
+								shadowBlur: 10,
+								shadowColor: '#333'
+							}
+						},
+						data: [{
+							name: '女装',
+							value: 10000,
+							textStyle: {
+								normal: {
+									color: 'black'
+								},
+								emphasis: {
+									color: 'red'
+								}
+							}
+						}, {
+							name: '3C数码配件',
+							value: 6181
+						}, {
+							name: '家具',
+							value: 4386
+						}, {
+							name: '收纳整理',
+							value: 4055
+						}, {
+							name: '汽车用具',
+							value: 2467
+						}, {
+							name: '流行饰品',
+							value: 2244
+						}, {
+							name: '珠宝',
+							value: 1898
+						}, {
+							name: '厨房家电',
+							value: 1484
+						}, {
+							name: '玩具',
+							value: 1112
+						}, {
+							name: '零食特产',
+							value: 965
+						}, {
+							name: '男装',
+							value: 847
+						}, {
+							name: '运动健身',
+							value: 582
+						}, {
+							name: '国潮出海',
+							value: 555
+						}, {
+							name: '手机',
+							value: 550
+						}, {
+							name: '节气新风',
+							value: 462
+						}, {
+							name: '文创商品',
+							value: 366
+						}, {
+							name: '文化营销',
+							value: 360
+						}, {
+							name: '老字号',
+							value: 282
+						}, {
+							name: '双品网物节',
+							value: 273
+						}, {
+							name: '高颜值',
+							value: 265
+						}]
+					}]
+				};
+            	chart.setOption(option);
+			 </script>
+		</div> 
+		
+		</div>
+			
+			
+			<!--===============三、（一）开始================-->
+		
+		<div id="page3" class="circle">
+			<!--数据图+文-->
+			
+			<div class="block">
+				<h2>三、国内消费现状</h2>
+				<h3>（一）中国消费者消费模式变化情况</h3>
+				<div id="chart1" class="chart" ></div>
+				<!--图的文字总结-->
+				<div class="text1">
+					消费结构与发达国家日益相似，居民文化消费需求持续增加。2015-2019年，居民医疗健康、文化娱乐消费快速攀升，五年来两项支出分别累计增长 63%和46%。受到疫情和人口结构影响，消费者将持续关注健康领域。麦肯锡预测，到2030年中国家庭全年在食物上的支出占比将继续下降，预计文教娱乐支出超过五分之一。
+				</div>
+				<!--=========================1居民家庭人均现金消费各项支出占比图==========================-->
+				 <script>
+					var myChart = echarts.init(document.getElementById('chart1'));
+					var option = {				 	
+					title: {
+						text: "家庭人均现金消费支出(%)"
+					},
+						toolbox: {
+						feature: {
+						dataView: {show: true, readOnly: false},
+						magicType: {show: true, type: ['line', 'bar']},
+						restore: {show: true},
+						saveAsImage: {show: true}
+						}
+					},
+
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						orient: 'horizontal',
+						x: 'center',
+						top: '7%',
+						data: ['食品', '衣着', '医疗健康', '生活用品', '居住', '其他', '文教娱乐', '交通通信',]
+					},
+					grid: {
+						left: '1%',
+						right: '5%',
+						top: '10%',
+						containLabel: true
+					},
+					xAxis: {
+						min: 0,
+						max: 100,
+						type: 'value',
+						name: "%"
+					},
+					yAxis: {
+						type: 'category',
+						data: ['2000年', '2005年', '2010年', '2015年', '2019年', '2030年', ]
+					},
+					series: [
+						{
+							name: '食品',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [38, 36, 36, 31, 28, 18]
+						},
+						{
+							name: '衣着',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [10, 10, 11, 7, 6, 13]
+						},
+						{
+							name: '医疗健康',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [6, 7, 6, 7, 9, 8]
+						},
+						{
+							name: '生活用品',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [8, 6, 7, 6, 6, 5]
+						},
+						{
+							name: '居住',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [10, 10, 10, 22, 23, 11]
+						},
+						 {
+							name: '其他',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [5, 4, 4, 2, 2, 3]
+						},
+						 {
+							name: '文教娱乐',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [13, 14, 12, 11, 12, 21]
+						},
+						{
+							name: '交通通信',
+							type: 'bar',
+							stack: '总量',
+							label: {
+								show: true,
+								position: 'insideRight'
+							},
+							data: [9, 13, 15, 13, 13, 20]
+						},
+					]
+				};
+					myChart.setOption(option);
+				</script>
+			</div>
+
+				<!--三、（一）中国消费者消费模式变化情况，2、3、图-->
+			<div class="block">	
+					<div id="chart2" class="chart" ></div>
+					<div id="chart3" class="chart"></div>
+					<div class="text1">居民消费持续走高，反哺经济增长，消费支出成我国经济增长的第一拉动力
+						<p>注:基于支出法核算GDP ,支出法国内生产总值=最终消费支出+资本形成总额+货物和服务净出口,其中最终消费支出指，常住单位为满足物质、文化和精神生活的需要，从本国经济领土和国外购实的货物和服务的支出;其对经济增长贡献率( 当年较上一年)最终消费支出变动值/(当年较上一年) GDP变动值x100%
+						<br>source:国家统计局2019年
+						
+						</p>
+					</div>	
+			</div>
+				<!--===========================2中国居民人均消费支出图==============================-->
+				<script>
+					var myChart = echarts.init(document.getElementById('chart2'));
+					var	option = {
+						title: {
+							text: '中国居民人均消费支出图',
+							subtext: 'source:国家统计局2019年'
+							}, 
+					   tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							crossStyle: {
+								color: '#999'
+							}
+						}
+					},
+					toolbox: {
+						feature: {
+							dataView: {show: true, readOnly: false},
+							magicType: {show: true, type: ['line', 'bar']},
+
+							restore: {show: true},
+							saveAsImage: {show: true}
+						}
+					},
+					legend: {
+						data: ['人均消费支出',  '同比增率']
+					},
+					xAxis: [
+						{
+							type: 'category',
+							data: ['2015年', '2016年', '2017年', '2018年', '2019年'],            
+							axisPointer: {
+								type: 'shadow'
+							},
+							splitLine:{show: false}
+						}
+					],
+					yAxis: [
+						{
+							type: 'value',
+							min: 0,
+							max: 28000,
+							interval: 7000,
+							axisLabel: {
+								formatter: '{value} 元'
+							},
+							splitLine:{show: false}
+						},
+						  {
+							type: 'value',
+							name: '单位：%',
+							min: 6,
+							max: 9,
+							interval: 2,
+							axisLabel: {
+								formatter: '{value} %'
+							}
+						}
+					],
+					series: [
+						{
+							name: '人均消费支出',
+
+							type: 'bar',
+							data: [15172.4,  17110.8,  18322.2, 19853.1, 21559.0],
+							barWidth : 60,
+						},
+
+						{
+							name: '同比增率',
+							type: 'line',
+							yAxisIndex: 1,
+							data: [8.4, 8.9, 7.1, 8.4, 8.6],
+							label:{
+								show: true,
+							}
+						}
+					]
+				};
+					myChart.setOption(option);
+
+				//--================3消费对经济增长贡献率===============-->
+					var myChart = echarts.init(document.getElementById('chart3'));
+					var option = {
+						title: {
+							text: '消费对经济增长贡献率',
+							subtext: 'source:国家统计局2019年',
+							left: 'center'
+							},
+						toolbox: {
+							feature: {
+								dataView: {show: true, readOnly: false},
+								magicType: {show: true, type: ['line', 'bar']},
+								restore: {show: true},
+								saveAsImage: {show: true}
+							}
+						},
+						tooltip: {
+							trigger: 'axis',
+							axisPointer: {
+								type: 'cross',
+								crossStyle: {
+									color: '#999'
+								}
+							}
+						},
+						xAxis: {
+							type: 'category',
+							data: ['2015 年 ', '2016 年 ', '2017 年 ', '2018 年 ', '2019 ']
+						},
+						yAxis: {
+
+								type: 'value',
+								name: '单位：%',
+								min: 50,
+								max: 70,
+								interval: 5,
+								axisLabel: {
+									formatter: '{value} '
+								},
+								splitLine:{
+									show:false,
+								}
+
+
+						},
+						series: [{
+							data: [59.7, 66.5, 57.5, 65.9, 57.8],
+							type: 'line',
+							symbol: 'triangle',
+							symbolSize: 30,
+							label: {
+									show: true,
+									position: 'bottom'
+								},
+							lineStyle: {
+								color: '#FF7043',
+								width: 5,
+								type: 'dashed'
+							},
+							itemStyle: {
+								borderWidth: 3,
+								borderColor: '#6A1B9A',
+								color: '#AEEA00'
+							}
+						}]
+						};
+					myChart.setOption(option);
+				</script>
+			
+
+			<!--==============三、（二）开始==================-->
+			
+			<div class="block">
+					<h3>（二）消费者群体画像</h3>
+					<div class="picture1">
+						<h4>1、消费群体比较</h4>
+						<img src="images/消费群体.png" alt="xiaofeiqunti" />
+					</div>
+					<div class="text1">
+						国潮文化商品的消费者主要来自高线城市，女性居多，比国货消费群体中女性消费者高出10%，85后至00后的消费者也明显多于其他群体。	
+					</div>
+			</div>
+
+				<!--三、（二）消费者群体画像，2、年轻群体关注点-->
+			<div class="block">
+					<div id="chart4" class="chart">
+						<h4>2、年轻群体关注点</h4>
+					</div>
+					<div class="text1">这些年轻群体，消费注重性价比的同时，还看重品牌；受到图文、视频类内容影响。
+						<p>注:消费关注点渗透率TGI，以00后为例,其TG|=100*00后用户消费时关注品牌的渗通率/全网用户消费时关注品牌的渗透率，数值大于100时,表明较全网用户，在消费时,更为注重具体品牌。<br>Source : QuestMobileGROWTH用户面像标签数据2020年4月
+						</p>
+					</div>
+			</div>
+				<!--====================4热点======================-->
+				<script>
+					var myChart = echarts.init(document.getElementById('chart4'));
+					var	option = {
+						title: {
+							text: '年轻群体关注点量'
+						},
+							toolbox: {
+						    feature: {
+							dataView: {show: true, readOnly: false},
+							magicType: {show: true, type: ['line', 'bar']},
+							restore: {show: true},
+							saveAsImage: {show: true}
+						    }
+					    },
+						tooltip: {
+							trigger: 'axis',
+							axisPointer: {
+								type: 'shadow'
+							}
+						},
+						legend: {
+							data: ['00后', '90后']
+						},
+						grid: {
+							left: '3%',
+							right: '4%',
+							bottom: '3%',
+							containLabel: true
+						},
+						xAxis: {
+							type: 'value',
+							min:110,
+							name: ['TGI']
+
+
+						},
+						yAxis: {
+							type: 'category',
+							data: ['价格', '品牌', '品质']
+						},
+						series: [
+							{   
+								name: '00后',
+								type: 'bar',
+								data: [119.6, 115.7, 115.0],
+								barGap: '0%',
+								barWidth: 40
+							},
+							{
+								name: '90后',
+								type: 'bar',
+								data: [119.0, 117.0, 113.7],
+								barWidth: 40
+							}
+
+						]
+					};
+					myChart.setOption(option);
+				</script>
+			
+		</div><!--page3结束-->
+			
+			<!--====================四、(一)开始=================-->
+		
+		<div id="page4">
+			
+			<div class="block">
+				<h2>四、消费品牌先行者的关键和启示</h2>
+				<h3>(一)创造变化，品销合一</h3>
+				<h4>1、产品上</h4>
+				<div class="picture2">
+					<img src="images/产品上1.png" alt="chanping1-1"  />
+					<img src="images/产品上2.png" alt="文创系列"/>
+				</div> 
+				<div class="text1"> 产品上，注重独特功能性的研发，多线条打造差异化爆款单品。</div>	
+			</div>	
+			
+			<!--四、（一）2、渠道上-->
+			<div class="block">	
+				<div class="picture3">
+					<h4>2、渠道上</h4>
+					<img src="images/图标合集.png" alt="tubiao"/>
+				</div>
+				<div class="text1">  渠道上，线上线下全渠道布局：不仅入驻电商平台，还不断尝试自建APP和小程序，并积极构建私域流量。</div>	
+			</div>
+			
+			<!--四、（一）3、营销上-->
+			<div class="block4-3">	
+				<h4>3、营销上</h4>
+				<div id="chart5" class="chart" ></div>
+				<div id="chart6" class="chart" ></div>
+				<div class="text1"> 营销上，基于多触点，利用线上广告、内容营销、KOL带货等方式引发全网裂变，持续输出品牌。国货愈发重视线上广告所带来的推广效果，此外，短视频广告已成快消品典型国货品牌主流的投放形式
+					<p>注:创意组数:选定周期广告主在投放的广告创意总计(相同广告主题定义为一个创意组。包括不同广告形式。投放不同媒介)
+						<br>Source : QuestlMobile AD Insight广告洞察数据库2020年4月
+					</p>
+				</div>
+			</div>
+			<!--=============================5国货与费国货占比==================-->
+			<script>
+				var myChart = echarts.init(document.getElementById('chart5'));	
+				var option = {
+					 title: {
+						text: '快消品行业线上广告 千万级以上投放费用国货与非国货占比',
+						x: 'center'
+					},
+
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						data: ['非国货', '国货'],
+						orient: 'vertical',
+						x: 'right',
+						padding: [20,40,0,20]
+					},
+					grid: {
+						left: '1%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [
+						{
+							type: 'category',
+							data: ['2019-04', '2020-04']
+						}
+					],
+					yAxis: [
+						{
+							type: 'value',
+							  axisLabel: {
+								formatter: '{value}%'
+										}
+						}
+
+					],
+					series: [
+						{
+							name: '国货',
+							type: 'bar',
+							stack: '广告',
+							data: [22.7, 43.6],
+							markLine: {
+								lineStyle: {
+									type: 'dashed'
+								},
+								data: [
+									[{type: 'min'}, {type: 'max'}]
+								]
+							},
+							label:{
+								show: true,
+								position: 'inside',
+							},  
+
+							itemStyle:{
+								normal:{
+								color:'#f7662a'
+								}
+							},
+						   barWidth: 100,
+						},
+						{
+							name: '非国货',
+							type: 'bar',
+							stack: '广告',
+							data: [77.3, 56.4],
+							label:{
+								show: true,
+								position: 'inside'
+
+							},
+							 itemStyle:{
+								normal:{
+								color:'#5e9be5 '
+								}
+							},
+						}
+
+					]
+				};
+				myChart.setOption(option);
+
+				//==========================6投放创意组数=======================
+				var myChart = echarts.init(document.getElementById('chart6'));
+				var option = {
+					 title: {
+						text: '2020年4月快消品行业线上广告投放创意组数',
+						left: 'center'
+
+					},
+					dataset: {
+						source: [
+							['score', 'amount', 'product'],
+							[3046, 3046, '图文信息流-APP效果'],
+							[890, 890, '短视频信息流-APP效果'],
+							[626, 626, '开屏-APP效果'],
+							[315, 315, 'Banner-APP效果'],
+							[286, 286, '图文信息流-APP品牌'],
+							[245, 245, '视频信息流-APP效果'],
+							[202, 202, '开屏-APP品牌'],
+							[185, 185, '视频贴片-APP品牌'],
+							[55, 55, '视频贴片-PC品牌'],
+							[33, 33,'Banner-APP品牌']
+						]
+					},
+					grid: {containLabel: true},
+					xAxis: {
+						name: '投放数',
+						splitLine: {show: false},
+						axisLabel:{show: false},
+					},
+					yAxis: {
+						type: 'category',
+						data: ['Banner-APP品牌', '视频贴片-PC品牌', '视频贴片-APP品牌', 
+						'开屏-APP品牌',
+						'视频信息流-APP效果', '图文信息流-APP品牌', 'Banner-APP效果',
+						'开屏-APP效果', '短视频信息流-APP效果', '图文信息流-APP效果', 
+						   ],
+
+
+					},
+					visualMap: {
+						orient: 'horizontal',
+						left: 'center',
+						min: 33,
+						max: 3046,
+						dimension: 0,
+						inRange: {
+							color: ['#D7DA8B', '#E15457']
+						}
+					},
+					series: [
+						{
+							type: 'bar',
+							encode: {
+								// Map the "amount" column to X axis.
+								x: 'amount',
+								// Map the "product" column to Y axis
+								y: 'product'
+							},
+							label:{
+								show: true,
+								position: 'insideRight'
+							}
+						}
+					]
+				};
+				myChart.setOption(option);
+			</script>
+
+			 <!--四关键字和启示（一）4.品牌上-->
+			<div class="block4-4">
+				<h4>4、品牌上</h4>
+				<div class="picture4">
+					<img src="images/品牌上.png" alt="pinpai" width="846" height="426"/>
+				</div>
+				<div class="text1">品牌上，通过高颜值设计和内在品牌附加值，新国货改变消费者的生活方式，带动裂变式传播，提升品牌影响力</div>
+			</div>
+		
+			 <!--四、（二）新国货在多行业创新发展 1、偏好度-->
+			<div class="block">
+				<h3>(二）新国货在多行业创新发展</h3>
+				<div id="chart7" class="chart"></div>
+				<div class="text1"> 
+					整体上，国产品牌进入掘金时代，用户对知名国产品牌的偏好程度超出平均水平。		
+					<p>
+						注:1.高消费能力用户; 200元以上的线上消费能力。网购兴趣; 2、偏好度=高消费人群相对于全网人群在电商平台浏览目标品牌的活跃占比TGI , TGI大于100，表明该品牌更受核心电商消费者欢迎:<br>Source:QuestMobileGROWTH 用户面像标签数据库2020年4月
+					</p>	
+				</div>
+			</div>
+			<!--====================================7偏好度====================================-->
+			<script>
+				var myChart = echarts.init(document.getElementById('chart7'));	
+				var option = {
+					title: {
+							text: '2020年4月 高消费能力用户对典型国货品牌的偏好度',
+							},
+						toolbox: {
+						feature: {
+						dataView: {show: true, readOnly: false},
+						magicType: {show: true, type: ['line', 'bar']},
+						restore: {show: true},
+						saveAsImage: {show: true}
+						}
+					},
+						tooltip: {
+							trigger: 'axis',
+							axisPointer: {
+								type: 'cross',
+								crossStyle: {
+									color: '#999'
+								}
+						}
+						},
+						 grid: {
+							left: '1%',
+							right: '1%',
+							bottom: '3.5%',
+							containLabel: true
+						},
+						xAxis: {
+							type: 'category',
+							data: ['乐町', '太平岛', '韩都衣舍','天堂伞',  '三只松鼠', '百草味',
+							'自然堂','同仁堂',  '格力', '森马', '海尔', '华为', '荣耀', '恒源祥',
+							'波司登'],
+							 axisLabel:{interval: 0,
+										rotate: 30,
+							 },
+							 itemStyle:{
+									normal:{
+									color:'#5e9be5'
+									}
+							},
+						},
+
+					   yAxis: {
+							type: 'value',
+							min:0,
+							max:120,
+							interval:40,
+							splitLine: {show: false}
+						},
+						  series: [{
+							data: [118.4, 111.3, 110.6, 110.2, 107.7, 107.7, 105.2, 104.2, 104.0,
+							103.1,101.9, 101.7, 101.7, 101.6, 101.5],
+							type: 'bar',
+								 label: {
+									show: true,
+									position: 'insideRight'
+								},
+							itemStyle: {
+							  normal: {
+								color: ['#FF9800'] 
+							  }
+							}
+						}]
+					};
+				myChart.setOption(option);
+			</script>
+
+			<!--=====================四、（三）开始=================-->
+
+			<div class="block">
+				<h3>(三）电商巨头不断扶持国货</h3>
+				<div class="picture5">
+					<img src="images/电商支持.png" alt="dianshang" width="878" height="480"/>
+				</div>
+				<div class="text1"> 电商巨头不断扶持国货，推动国货消费结构性升级，另一方面，帮助国货品牌进行全链路升级，提升品牌竞争力。</div>
+			</div>
+
+			<!--=====================四、（四）开始=================-->
+			<div class="block">
+				<h3>(四）品牌自身模式创新</h3>
+				<h4>1、小米为例</h4>
+				<div id="chart8" class="chart"></div>
+				<div class="text1"> 
+					小米有品以众筹模式，采取供应链的强介入，把控研发、生产、入驻，还进行线上线下融合，帮助品牌完成从0到1的积累，孵化出云米等一批生态链国货品牌。
+				</div>
+			</div>
+			<!--====================================8小米===========================-->
+			<script>
+			var myChart = echarts.init(document.getElementById('chart8'));
+			var option = {
+				color: ['#c23531'],
+				 title: {
+					text: '小米有品APP月活跃用户规模',
+					x: 'center'
+				},
+					toolbox: {
+						feature: {
+						dataView: {show: true, readOnly: false},
+						magicType: {show: true, type: ['line', 'bar']},
+						restore: {show: true},
+						saveAsImage: {show: true}
+						}
+					},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+
+				grid: {
+					left: '1%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				xAxis: [
+					{
+						type: 'category',
+						data: ['2019-04', '2020-04']
+					}
+				],
+				yAxis: [
+					{
+						type: 'value',
+						 axisLabel: {
+							 formatter: '{value}万'
+						},
+						min:0,
+						max:240,
+						interval:80,
+					}
+
+				],
+				series: [
+					{
+						data: [87.6, 212.2],
+						type: 'bar',
+
+						label: {
+							show: true,
+							position: 'inside',
+						},
+						itemStyle: {
+							normal: {color:'#fe4365'}
+						},
+						barWidth: '30%',
+						markLine: {
+							lineStyle: {
+								type: 'dashed'
+							},
+							label:{
+								formatter: "+142.2%",
+								position: "middle"
+							},
+							data: [
+								[{type: 'min'}, {type: 'max'}]
+							]
+						},
+					}
+				]
+			};
+			myChart.setOption(option);
+			</script>
+
+			<!--四、（四）品牌自身模式创新,,2、网易-->
+			<div class="block">
+				<h4>2、网易为例</h4>
+				<div id="chart9" class="chart"></div>
+				<div class="text1"> 网易严选以工厂深度合作的模式，去除中间环节，直连制造商和用户，为用户提供品质不输于海外品牌但价格更亲民的产品。</div>
+			</div>
+			<!--=========================9网易=======================================-->
+			<script>
+				var myChart = echarts.init(document.getElementById('chart9'));
+				var option = {
+					color: ['#c23531'],
+					 title: {
+						text: '网易严选APP月活跃用户规模',
+						x: 'center'
+					},
+						toolbox: {
+						feature: {
+						dataView: {show: true, readOnly: false},
+						magicType: {show: true, type: ['line', 'bar']},
+						restore: {show: true},
+						saveAsImage: {show: true}
+						}
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+
+					grid: {
+						left: '1%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [
+						{
+							type: 'category',
+							data: ['2019-04', '2020-04']
+						}
+					],
+					yAxis: [
+						{
+							type: 'value',
+							 axisLabel: {
+								 formatter: '{value}万'
+							},
+							min:0,
+							max:200,
+							interval:50,
+						}
+
+					],
+					 series: [
+						{
+							data: [143.0, 179.3],
+							type: 'bar',
+
+							label: {
+								show: true,
+								position: 'inside',
+							},
+							itemStyle: {
+								normal: {color:'#f7662a'}
+							},
+							barWidth: '30%',
+							 markLine: {
+								lineStyle: {
+									type: 'dashed'
+								},
+								label:{
+									formatter: "+25.4%",
+									position: "middle"
+								},
+								data: [
+									[{type: 'min'}, {type: 'max'}]
+								],
+
+							}
+						}
+					]
+				};
+				myChart.setOption(option);
+			</script>
+
+			<!--=======================四、（五）开始============-->
+		
+			<div class="block">
+				<h3>(五）获取目标客群的精准画像</h3>
+				<div id="chart10" class="chart"></div>
+				<div class="text1"> 可通过标签组合，基于数据挖掘获取用户属性和线上触媒偏好。</div>	
+			<!--============================10用户画像=====================-->
+			<script>
+				var myChart = echarts.init(document.getElementById('chart10'));
+				var option = {
+					tooltip: {
+						trigger: 'item',
+						formatter: "{a} <br/>{b}: {c}%"
+					},
+					legend: {
+						orient: 'vertical',
+						x: 'left',
+						data:['18岁以下', '19-24岁', '25-30岁', '31-35岁', '36-40岁',
+											'41-45岁','46岁以上', '一线城市', '二线城市', '三线城市','四线城市',
+											'五线及以下城市']
+					},
+				series: [
+					{
+						name:'2020年4月车主人群用户画像',
+						type:'pie',
+						selectedMode: 'single',
+						radius: [0, '30%'],
+
+						label: {
+							normal: {
+								position: 'inner'
+							}
+						},
+						labelLine: {
+							normal: {
+								show: false
+							}
+						},
+						data:[
+							{value:25, name:'一线城市', selected:true},
+							{value:17.4, name:'二线城市'},
+							{value:20.1, name:'三线城市'},
+							{value:20.1, name:'四线城市'},
+							{value:13.0, name:'五线及以下城市'},
+						]
+					},
+					{
+						name:'2020年4月车主人群用户画像',
+						type:'pie',
+						radius: ['40%', '55%'],
+
+						data:[
+							{value:4.6, name:'18岁以下'},
+							{value:14.7, name:'19-24岁'},
+							{value:23.7, name:'25-30岁'},
+							{value:21.1, name:'31-35岁'},
+							{value:14.0, name:'36-40岁'},
+							{value:13.1, name:'41-45岁'},
+							{value:8.9, name:'46岁以上'},
+
+						]
+					}
+				]
+			};
+			myChart.setOption(option);
+			</script>
+			</div><!--part7结束-->
+
+
+			<div class="block">
+				<h3>(六）选取KOL</h3>
+				<h4>抖音为例</h4>
+				<div id="chart11" class="chart" ></div>
+				<div class="text1"> 国产品牌手机崛起，华为已占榜首，四大国产品牌市场份额进一步提升，且高端国产机同样走俏。
+					<p>
+						注:1、活跃渗遇率:在统计周期内，目标品牌受众浏览观看某个KOL发布内容的的活跃用户数除以该目标晶牌的活跃用户数;2、活跃渗透率TGI :在统计同期内,目标品牌受众中某个KOL的活跃渗透率与比除以该品牌所在品类受众中该KOL的活跃渗透率
+						<br>Source: QuestMobile NEW MEDIA新媒体数据库2020年4月
+					</p>
+				</div>
+			</div>
+			<!--==========================11抖音KOL=============================-->
+			<script>
+				var myChart = echarts.init(document.getElementById('chart11'));
+				var option = {
+					title: {
+								text: '2020年4月某典型国货品牌  受众的KOL关注偏好',
+								}, 
+						   tooltip: {
+							trigger: 'axis',
+							axisPointer: {
+								type: 'cross',
+								crossStyle: {
+									color: '#999'
+								}
+							}
+						},
+						toolbox: {
+							feature: {
+								dataView: {show: true, readOnly: false},
+								magicType: {show: true, type: ['line', 'bar']},
+								restore: {show: true},
+								saveAsImage: {show: true}
+							}
+						},
+						legend: {
+							orient: 'vertical',
+							left: '68%',
+							data: ['活跃渗透率',  '活跃渗透率TGI'],
+
+						},
+						xAxis: [
+							{
+								type: 'category',
+								data: ['辛有志辛巴', '人民日报', '大璇时尚搭配',
+								'清河李哥情感\n连麦破百万',
+								'小伊伊', '大胃王阿洁', ' 农村会姐 ','天舒很硬天舒班', 
+								'时大漂亮超级\n品牌选品官'],
+								axisLabel: {  
+								   interval:0,  
+								   rotate:40  
+								},
+							 splitLine: {show: false},
+							}
+						],
+						yAxis: [
+							{
+								type: 'value',
+								min: 0,
+								max: 100,
+								interval: 25,
+								axisLabel: {
+									formatter: '{value} %'
+								},
+								splitLine: {show: false},
+
+
+							 },
+							{
+								type: 'value',
+								min: 80, 
+								max: 130,
+								name: 'TGI',
+							}
+						],
+						series: [
+							{
+								name: '活跃渗透率',
+								type: 'bar',
+								data: [50.2,  45.4, 42.5, 41.7, 38.6, 37.9, 37.6, 37.6, 36.0, 35.6]
+							},
+
+							{
+								name: '活跃渗透率TGI',
+								type: 'line',
+								yAxisIndex: 1,
+								data: [117, 108, 125,122,122, 107,117,125,121,119],
+								label:{
+									show: true,
+								}
+							},
+
+						]
+					};
+				myChart.setOption(option);
+			</script>
+			
+		</div><!--page4结束-->
+				
+		<footer>
+			<div>
+				<p>Source:国家统计局、麦肯锡、阿里数据</p>
+				<p>	producer：王丽、唐倩</p>	
+			</div>
+			<section class="s2">
+				<a href="#" class="iconbtn fas fa-laptop"></a>
+				<a href="#" class="iconbtn fas fa-mobile-alt"></a>
+				<a href="#" class="iconbtn fas fa-cog"></a>
+				<a href="#" class="iconbtn fas fa-link"></a>
+			</section>
+				<a href="#top-header">
+					<img src="images/up.png" alt="向上图标">
+				</a>
+		</footer>
+	</body>
+</html>
